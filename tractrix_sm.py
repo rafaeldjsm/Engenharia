@@ -2,7 +2,7 @@ import turtle
 from math import *
 
 
-curva = 180
+curva = 150
 
 # Dados do Cavalo
 lfrontal = 2.49 #   Largura frontal
@@ -97,9 +97,6 @@ d4_10 =  t4.xcor() - t10.xcor() # Distância entre t4 e t10
 #Menor distância pemritida entre os pontos 1 e 10 com esterçamento máximo do semireboque
 md110 = (d14**2 + d4_10**2 + 2*d14*d4_10*cos(radians(estsm)))**(1/2)
 
-print(d14)
-print(d4_10)
-print(md110)
 
 colors = ["black","green","green","black","red","red"]*2
 c = 0
