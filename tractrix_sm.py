@@ -123,7 +123,7 @@ def trajetoria_sm(curva, dx):
 
     alfa2 = 0.1*teta
     while t.heading() < curva - teta:
-        if t.distance(t10) >= md110: #Verificando o exterçamento máximo do Semireboque
+        if t.distance(t10) > md110: #Verificando o exterçamento máximo do Semireboque
             if alfa2 < teta :
                 alfa2 = alfa2 + 0.1*teta
                 t.lt(alfa2) 
