@@ -25,11 +25,10 @@ def tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14):
     x_t4,y_t4 = t4.pos()
     
     for k in [t2,t3,t5,t6]:
-        k.setheading(t4.towards(t))
-    
-    cos_ = (xc - x_t4)/d14
-    sen_ = (yc - y_t4)/d14
-    
+        k.setheading(t4.heading())
+
+    cos_ = cos(radians(t4.heading()))
+    sen_ = sin(radians(t4.heading()))
     
     x_t2 = xc + eixof*cos_ + (lfrontal/2)*sen_
     y_t2 = yc + eixof*sen_ - (lfrontal/2)*cos_
@@ -37,14 +36,14 @@ def tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14):
 
     x_t3 = 2*(xc + eixof*cos_) - x_t2
     y_t3 = 2*(yc + eixof*sen_) - y_t2
-    t3.goto(x_t3,y_t3)        
+    t3.goto(x_t3,y_t3)
 
     x_t5 = x_t4 - eixot*cos_ + (ltraseira/2)*sen_
     y_t5 = y_t4 - eixot*sen_ - (ltraseira/2)*cos_
-    t5.goto(x_t5,y_t5)    
+    t5.goto(x_t5,y_t5)
 
     x_t6 = 2*(x_t4 - eixot*cos_) - x_t5
-    y_t6 = 2*(y_t4 - eixot*sen_ ) -y_t5
+    y_t6 = 2*(y_t4 - eixot*sen_) - y_t5 
     t6.goto(x_t6,y_t6)
 
 def pino_rei(t,t4,t7,d4pr):
