@@ -3,7 +3,7 @@ from math import *
 from tractrix import tract1, tract0
 
 
-curva = 180
+curva = -90
 
 # Dados do Cavalo
 lfrontal = 2.49 #   Largura frontal
@@ -64,6 +64,9 @@ for _ in range(10):
 
 
 alfa2 = 0
+
+teta = teta if curva> 0 else -teta
+
 while t.heading() <= curva:
     if alfa2 < teta :
         alfa2 = alfa2+0.1
