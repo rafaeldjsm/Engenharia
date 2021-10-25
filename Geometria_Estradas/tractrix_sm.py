@@ -1,6 +1,6 @@
 import turtle
 from math import *
-from tractrix import tract1, tract0,pino_rei
+from tractrix import tract1, tract0,pino_rei,transf_ang
 
 
 #curva = 180
@@ -94,12 +94,6 @@ def cria_veiculo(t,lfrontal = 2.49,eixof = 1.45,d_eixo = 4.2,ltraseira = 2.49,ei
 
     return [t,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,alfa]
 
-def transf_ang(angle):
-    '''
-    Função para transformar os angulos para estarem apenas na imagem de 0 a 2pi (0º a 360º)
-    '''
-    angle = angle % 360
-    return angle if angle>0 else 360+angle
     
 def trajetoria_curva(lst_t,curva,dx,raio_inic=22):
 
@@ -158,10 +152,7 @@ def trajetoria_curva(lst_t,curva,dx,raio_inic=22):
     delta_head = ang_final - transf_ang(t.heading())
     
     for cnt in range(10):
-        if delta_head >0 :
-            t.lt(delta_head/10)
-        else:
-            t.rt(abs((delta_head)/10))
+        t.lt(delta_head/10)
         t.fd(dx)
         tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14)
         pino_rei(t,t4,t7,d4pr) # t7 - Pino/eixo do semireboque fica a frente do eixo traseiro do cavalo mecânico

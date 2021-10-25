@@ -60,7 +60,14 @@ def pino_rei(t,t4,t7,d4pr):
     y_t7 = y_t4 + d4pr*sen_
     t7.goto(x_t7,y_t7)
 
-
+######
+def transf_ang(angle):
+    '''
+    Função para transformar os angulos para estarem apenas na imagem de 0 a 2pi (0º a 360º)
+    '''
+    angle = angle % 360
+    return angle if angle>=0 else 360+angle
+######
 
 if __name__ == "__main__":
 

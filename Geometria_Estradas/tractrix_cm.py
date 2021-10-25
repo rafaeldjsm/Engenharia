@@ -1,9 +1,9 @@
 import turtle
 from math import *
-from tractrix import tract1, tract0
+from tractrix import tract1, tract0,transf_ang
 
 
-curva = -90
+curva = 82
 
 # Dados do Cavalo
 lfrontal = 2.49 #   Largura frontal
@@ -19,7 +19,7 @@ teta = degrees(2*asin(dx/(2*rmin)))# Angulo de giro pata a trajetória circular 
 
 t = turtle.Turtle()
 wn = turtle.Screen()
-wn.setworldcoordinates(-10,-5, 50,55)
+wn.setworldcoordinates(-50,-50, 50,50)
 
 # Eixos e extremidades do cavalo
 
@@ -65,28 +65,35 @@ for _ in range(10):
 
 alfa2 = 0
 
-teta = teta if curva> 0 else -teta
+teta = teta if curva> 0 else - teta
 
-while t.heading() <= curva:
-    if alfa2 < teta :
-        alfa2 = alfa2+0.1
+ang_final = t.heading() + curva
+ang_final = transf_ang(ang_final)
+ang_atual = transf_ang(t.heading())
+
+
+while abs(ang_final-ang_atual) > abs(teta):
+    if abs(alfa2) < abs(teta) :
+        alfa2 = alfa2+0.1*teta
     else:
         alfa2 = teta
  
     t.lt(alfa2)
     t.fd(dx)
     tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14)
+    ang_atual = transf_ang(t.heading())
+    
 
-delta_head = t.heading()- curva
+delta_head = ang_final-ang_atual
 
-while delta_head > 0.1:
-    delta_head = t.heading()- curva
-    t.setheading(curva + 0.9*delta_head)
+while delta_head > 0.01:
+    delta_head = t.heading()- ang_final
+    t.setheading(ang_final + 0.1*delta_head)
     t.fd(dx)
     tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14)
  
 
 for _ in range(10):
-    t.setheading(curva)
+    t.setheading(ang_final)
     t.fd(dx)
     tract1(t,t2,t3,t4,t5,t6,lfrontal,eixof,ltraseira,eixot,d14)
