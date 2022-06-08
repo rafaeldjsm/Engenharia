@@ -1,0 +1,24 @@
+Grupo,Padrão,,Idade Referencial – Ir (anos),Valor Residual – R (%)
+1. BARRACO,1.1,Padrão Rústico,5,0%
+1. BARRACO,1.2,Padrão Simples,10,0%
+2. CASA,2.1,Padrão Rústico,60,20%
+2. CASA,2.2,Padrão Proletário,60,20%
+2. CASA,2.3,Padrão Econômico,70,20%
+2. CASA,2.4,Padrão Simples,70,20%
+2. CASA,2.5,Padrão Médio,70,20%
+2. CASA,2.6,Padrão Superior,70,20%
+2. CASA,2.7,Padrão Fino,60,20%
+2. CASA,2.8,Padrão Luxo,60,20%
+3. GALPÃO,3.1,Padrão Econômico,60,20%
+3. GALPÃO,3.2,Padrão Simples,60,20%
+3. GALPÃO,3.3,Padrão Médio,80,20%
+3. GALPÃO,3.4,Padrão Superior,80,20%
+4. COBERTURA,4.1,Padrão Simples,20,10%
+4. COBERTURA,4.2,Padrão Médio,20,10%
+4. COBERTURA,4.3,Padrão Superior,30,10%
+5. ESCRITÓRIO,5.1,Padrão Econômico,70,20%
+5. ESCRITÓRIO,5.2,Padrão Simples,70,20%
+5. ESCRITÓRIO,5.3,Padrão Médio,60,20%
+5. ESCRITÓRIO,5.4,Padrão Superior,60,20%
+5. ESCRITÓRIO,5.5,Padrão Fino,50,20%
+5. ESCRITÓRIO,5.6,Padrão Luxo,50,20%
