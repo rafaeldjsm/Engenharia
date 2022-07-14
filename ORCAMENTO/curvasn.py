@@ -1,3 +1,6 @@
+from scipy.stats import norm
+import numpy as np
+
 def cvsn(n):
     '''
     Gera uma curva S de desembolso considerando uma S padrão normal
