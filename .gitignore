@@ -5,3 +5,4 @@ estruturas_metalicas/perfis soldados2.csv
 ORCAMENTO/_SINAPI_Relatório_Família_de_Insumos_2021_08.csv
 TERRAPLENAGEM/nuvempts.txt
 trajetorias.scr
+*.gitignore
